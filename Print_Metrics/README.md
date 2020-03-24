@@ -12,7 +12,7 @@ Project is created with:
 
 ## Usage
 
-```
+```bash
 usage: /app/metrics.py (cpu | mem | pids)
 
 Print system utilization metrics.
@@ -24,14 +24,14 @@ pids - print current running processes info
 
 ## Setup
 ### On host:
-```
+```bash
 $ cd Print_Metrics/
 $ pip3 install psutil
 $ python3 metrics.py cpu # or mem, or pids
 ```
 
 ### Within Docker container:
-```
+```bash
 $ cd Print_Metrics/
 $ docker build -t print_metrics .
 $ docker run -it --rm -v $PWD:/app -v /etc/passwd:/etc/passwd:ro --pid=host print_metrics cpu # or mem, or pids
@@ -48,7 +48,7 @@ Some Docker options clarification:
 ## Examples
 
 * print cpu utilization metrics (on a host):
-```
+```bash
 $ ./metrics.py cpu
 system.cpu.idle 39670.22
 system.cpu.user 6557.26
@@ -59,7 +59,7 @@ system.cpu.system 2569.34
 ```
 
 * print mem utilization metrics (using Docker container):
-```
+```bash
 $ docker run -it --rm -v $PWD:/app print_metrics mem
 virtual total 12461645824
 virtual used 4300693504
@@ -71,7 +71,7 @@ swap free 8589930496
 ```
 
 * print pids info (on a host):
-```
+```bash
 $ ./metrics.py pids
 ...
     798 avahi           avahi-daemon
@@ -87,7 +87,7 @@ $ ./metrics.py pids
 ```
 
 * print pids info (within a container):
-```
+```bash
 $ docker run -it --rm -v $PWD:/app -v /etc/passwd:/etc/passwd:ro --pid=host metrics pids
 ...
     798 avahi           avahi-daemon
