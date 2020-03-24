@@ -27,7 +27,7 @@ def validate_arg():
     else:
         print_usage_exit()
 
-    if ARG not in ('cpu', 'mem'):
+    if ARG not in ('cpu', 'mem', 'pids'):
         print_usage_exit()
 
 def print_cpu_metrics():
@@ -53,13 +53,21 @@ def print_mem_metrics():
     print("swap used {}".format(swap_metrics.used))
     print("swap free {}".format(swap_metrics.free))
 
+def print_pids():
+    for proc in psutil.process_iter(['pid', 'name', 'username']):
+        print("{:7} {:15} {}".format(proc.info['pid'], \
+                                     proc.info['username'], \
+                                     proc.info['name']))
+
 def main():
     validate_arg()
     if ARG == 'cpu':
         print_cpu_metrics()
-    else:
+    elif ARG == 'mem':
         print_mem_metrics()
-    
+    elif ARG == 'pids':
+        print_pids()
+
     return 0
 
 if __name__ == '__main__':
