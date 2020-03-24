@@ -27,14 +27,14 @@ pids - print current running processes info
 ```
 $ cd Print_Metrics/
 $ pip3 install psutil
-$ python3 metrics.py (cpu | mem | pids)
+$ python3 metrics.py cpu # or mem, or pids
 ```
 
 ### Within Docker container:
 ```
 $ cd Print_Metrics/
 $ docker build -t print_metrics .
-$ docker run -it --rm -v $PWD:/app -v /etc/passwd:/etc/passwd:ro --pid=host print_metrics (cpu | mem | pids)
+$ docker run -it --rm -v $PWD:/app -v /etc/passwd:/etc/passwd:ro --pid=host print_metrics cpu # or mem, or pids
 ```
 Some Docker options clarification: 
 
