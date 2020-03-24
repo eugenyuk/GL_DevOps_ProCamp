@@ -8,6 +8,7 @@ This is the entry project of GL DevOps ProCamp.
 Project is created with:
 * Python 3.8
 * psutil library
+* Docker 19.0.3
 	
 ## Setup
 To run a script directly:
@@ -21,7 +22,7 @@ To run a script in a Docker container:
 ```
 $ cd Print_Metrics/
 $ docker build -t print_metrics .
-$ docker docker run -it --rm -v $PWD:/app print_metrics (cpu | mem)
+$ docker run -it --rm -v $PWD:/app print_metrics (cpu | mem)
 ```
 
 ## Examples
