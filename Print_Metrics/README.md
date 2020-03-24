@@ -8,6 +8,7 @@ This is the entry project of GL DevOps ProCamp.
 Project is created with:
 * Python 3.8
 * psutil library
+* Docker 19.0.3
 	
 ## Setup
 To run a script directly:
