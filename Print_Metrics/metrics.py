@@ -11,9 +11,13 @@ ARG = 0
 
 def print_usage_exit():
     msg = """\
-            usage: {} (cpu | mem)
+            usage: {} (cpu | mem | pids)
 
-            Collect cpu or mem metrics.
+            Print system utilization metrics.
+
+            cpu - print CPU utilization metrics
+            mem - print RAM utilization metrics
+            pids - print current running processes info
             """.format(sys.argv[0])
 
     # textwrap.dedent removes leading spaces from msg
