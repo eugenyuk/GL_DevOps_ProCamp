@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 #
-# Script collects
+# Script prints system utilization metrics
 
 import psutil
 import sys
