@@ -22,7 +22,7 @@ To run a script in a Docker container:
 ```
 $ cd Print_Metrics/
 $ docker build -t print_metrics .
-$ docker docker run -it --rm -v $PWD:/app print_metrics (cpu | mem)
+$ docker run -it --rm -v $PWD:/app print_metrics (cpu | mem)
 ```
 
 ## Examples
