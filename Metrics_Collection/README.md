@@ -1,3 +1,3 @@
 # Metrics Collection
 
-This is a script which prints basic information about your OS to console.
+This is a script, written in Python, which prints basic information about OS to console.
