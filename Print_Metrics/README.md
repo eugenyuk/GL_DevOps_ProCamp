@@ -23,14 +23,14 @@ pids - print current running processes info
 ```
 
 ## Setup
-To run a script on a host:
+### On host:
 ```
 $ cd Print_Metrics/
 $ pip3 install psutil
 $ python3 metrics.py (cpu | mem | pids)
 ```
 
-To run a script within Docker container:
+### Within Docker container:
 ```
 $ cd Print_Metrics/
 $ docker build -t print_metrics .
