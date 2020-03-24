@@ -36,6 +36,14 @@ $ cd Print_Metrics/
 $ docker build -t print_metrics .
 $ docker run -it --rm -v $PWD:/app -v /etc/passwd:/etc/passwd:ro --pid=host print_metrics (cpu | mem | pids)
 ```
+Some Docker options clarification: 
+
+`-v $PWD:/app` - this option mounts current directory (which should be Print_Metrics/) as a volume into container's /app directory. So we can edit our script on a host and all changes are provisioned to a container instantly.
+
+`-v /etc/passwd:/etc/passwd:ro` - this option mounts /etc/passwd file from host into a container in read-only mode. Need for `pids` metric to display usernames for processes running on the host machine from within the container.
+
+`--pid=host` - this option allows to share host's PID namespace with the container. Need for `pids` metric to display information about processes running on the host machine from within the container.
+
 
 ## Examples
 
